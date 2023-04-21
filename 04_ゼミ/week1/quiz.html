@@ -9,6 +9,13 @@
   <body>
     <h1>クイズ</h1>
     <div>Q. 富士山の頂上は何県？</div>
+    <div>
+      <img
+        src="https://illustimage.com/photo/1293.png?20220101"
+        alt="富士山"
+        id="huji"
+      />
+    </div>
     <button id="button1">山梨県</button>
     <button id="button2">静岡県</button>
     <button id="button3">神奈川県</button>
@@ -18,16 +25,26 @@
       const button2 = document.getElementById("button2")
       const button3 = document.getElementById("button3")
       const answer = document.getElementById("answer")
+      const pic = document.getElementById("huji")
       button1.onclick = function () {
         answer.textContent = "正解！"
+        pic.src =
+          "https://frame-illust.com/fi/wp-content/uploads/2016/04/7560b.png"
+        button1.disabeled = true
       }
 
       button2.onclick = function () {
         answer.textContent = "正解！"
+        pic.src =
+          "https://frame-illust.com/fi/wp-content/uploads/2016/04/7560b.png"
+        button2.disabeled = true
       }
 
       button3.onclick = function () {
         answer.textContent = "はずれ！"
+        pic.src =
+          "https://frame-illust.com/fi/wp-content/uploads/2016/04/7560b.png"
+        button3.disabeled = true
       }
     </script>
   </body>
