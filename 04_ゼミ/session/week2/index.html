@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>メモアプリ</h1>
+    <input id="memo-input" />
+    <button id="add-button">追加</button>
+    <div id="memo-container"></div>
+    <script src="main.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>メモアプリ</title>
+  </head>
+  <body>
+    <h2>メモアプリ</h2>
+    <input type="text" id="memo-input" />
+    <button id="add-button">保存</button>
+    <div id="memo-container"></div>
+    <script>
+      const memoInput = document.getElementById("memo-input")
+      const addButton = document.getElementById("add-button")
+      const memoContainer = document.getElementById("memo-container")
+
+      let memos = []
+
+      addButton.onclick = function () {
+        memos.push(memoInput.value)
+        console.log(memos)
+
+        memoContainer.textContent = ""
+
+        for (let i = 0; i < memos.length; i++) {
+          const div = document.createElement("div")
+          div.textContent = memos[i]
+          memoContainer.append(div)
+        }
+        // 取得した内容をDOMに反映する
+        // 1. div をJavaScriptで新しく作る
+        // const div = document.createElement("div")
+
+        // 2. 作成したdivのtextContentにinputに入力した内容を入れる
+        // div.textContent = memoInput.value
+        // 3. 作成したdivを<div id="memo-container"></div>の子要素に追加する
+        // memoContainer.append(div)
+      }
+    </script>
+  </body>
+</html>
